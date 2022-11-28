@@ -1,0 +1,51 @@
+#game-board{
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin: 10px;
+    max-width: 600px;
+}
+
+
+.game-button {
+    font-size: 30px;
+    border-radius: 100%;
+    aspect-ratio: 1;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.game-button > span{
+    display: none;
+    pointer-events: none;  /* Span not clickeable. Only button */
+}
+
+.show > span{
+    display: block;
+}
+
+.not-clickable{
+    pointer-events: none;
+}
+
+.start-button-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#start-button > button{
+    cursor: pointer;
+    font-size:xx-large;
+    border: 2px solid black;
+    border-radius: 20px;
+    max-width: fit-content;
+    align-items: center;
+    padding: 5px 20px 5px 20px;
+}
+
+#countdown-number{
+    font-size:xx-large;
+    max-width: fit-content;
+}
