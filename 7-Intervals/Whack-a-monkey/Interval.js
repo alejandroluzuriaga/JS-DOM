@@ -14,9 +14,38 @@ const pointsTitle = document.querySelector('#points')
 let previousButton;
 let points = 0;
 let startButtonPressed = false;
-let actualCountDown = countDown;
+let interval1, interval2, interval3;
+let time1 = 20000;
+let time2 = 1000;
+let actualCountDown = time1/1000;
 
+    const toggleStartPressed = () =>{
+        if(!startButtonPressed){
+            toggleStartGame();
+        } else{
+            toggleStopGame();
+        }
+    }
 
+    const toggleStartGame = () =>{
+        if(!startButtonPressed){
+            startButtonPressed = true;
+            countDownActive();
+        }
+    }
+
+    const countDownActive = () =>{
+        interval2 = setInterval(toggleStopGame, time1);
+        countDown.innerText = time1/1000;
+        interval3 = setInterval(countDownDecreaser, 1000);
+        interval1 = setInterval(handleToggleButtons, time2);
+    }
+
+    const countDownDecreaser = () =>{
+        countDown.innerText = (actualCountDown - 1);
+        actualCountDown -= 1;
+    }
+    
     const handleToggleButtons = () =>{
         if (previousButton){
             previousButton.classList.remove('show')
@@ -30,7 +59,7 @@ let actualCountDown = countDown;
         previousButton = randomButton;
     }
 
-    const handleClickGameButton = (event) =>{
+    const handleMonkeyButton = (event) =>{
         const isClickable = event.target.className.includes('show')
         if (isClickable){
             points += 1;
@@ -39,21 +68,19 @@ let actualCountDown = countDown;
         }
     }
 
+    const toggleStopGame = () =>{
+        startButtonPressed = !startButtonPressed;
+        clearInterval(interval1);
+        clearInterval(interval2);
+        clearInterval(interval3);
+        points = 0;
+        pointsTitle.innerText = points;
+
+    }
+
 for(let i = 0; i < gameButtons.length; ++i){
     const gameButton = gameButtons[i];
 
-    gameButton.addEventListener('click', handleClickGameButton);
+    gameButton.addEventListener('click', handleMonkeyButton);
 }
-
-const toggleRestartGame = () =>{
-    if(!startButtonPressed){
-        startButtonPressed = true;
-        startButton.classList.remove('cursor')
-        setInterval(handleToggleButtons, 1000);
-    }
-}
-const toggleStartPressed = () =>{
-    setTimeout(toggleRestartGame, 10000)
-}
-
 startButton.addEventListener('click', toggleStartPressed);

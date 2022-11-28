@@ -25,6 +25,10 @@
     display: block;
 }
 
+.dont-show > span{
+    display: none;
+}
+
 .not-clickable{
     pointer-events: none;
 }
@@ -45,7 +49,9 @@
     padding: 5px 20px 5px 20px;
 }
 
-#countdown-number{
+#countdown{
+    display: flex;
+    align-items: baseline;
     font-size:xx-large;
     max-width: fit-content;
 }
