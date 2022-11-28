@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#lightbulb{
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+}
+
+.off{
+    background-color: grey;
+}
+.on {
+    background-color: yellow;
+}
+
+#toggle{
+    margin: 10px;
+}
