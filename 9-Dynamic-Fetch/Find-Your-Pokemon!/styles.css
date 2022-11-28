@@ -32,12 +32,12 @@ header h2{
 }
 
 .pokemon{
-    color: white;
+    color: rgb(88, 86, 86);;
     max-width: 250px;
     display: flex;
     align-items: center;
     flex-direction: column;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: rgb(78, 106, 167);
+    background-color: #FFD700
 }
