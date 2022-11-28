@@ -1,0 +1,43 @@
+
+header{
+    display: flex;
+    border-radius: 25px;
+    font-family: sans-serif;
+    flex-direction: column;
+    background-color: rgb(172, 46, 46);
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+header h1{
+    border: 5px solid rgb(88, 86, 86);
+    background-color: rgb(161, 46, 46);
+    border-radius: 30px;
+    padding: 10px;
+    color: white;
+    text-decoration:solid;
+}
+
+body input, body button{
+    margin-bottom: 10px;
+}
+header h2{
+    color: white;
+    font-family: sans-serif;
+    text-decoration:solid;
+}
+.pokemon-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.pokemon{
+    color: white;
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(78, 106, 167);
+}
