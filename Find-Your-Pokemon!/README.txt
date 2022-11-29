@@ -1,0 +1,1 @@
+This 'Find-Your-Pokemon' works with an HTML form.
